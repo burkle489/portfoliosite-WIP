@@ -1,0 +1,36 @@
+$Font1: "Roboto", sans-serif;
+
+$BasicColor1: #ffffff; /* white */
+$BasicColor2: #000000; /* black */
+$BasicColor3: #504e53; /* grey */
+$BasicColor4: #7cd838; /* valid green */
+$BasicColor5: #d83838; /* error red */
+$BasicColor6: #dedfdf; /* light grey */
+$BasicColor7: #f1f1f1; /* whitesmoke */
+$BasicColor8: #a1a1a1; /* dark grey */
+$BasicColor9: #f19a9a; /* darksalmon */
+$BasicColor10: #ffecec; /* linen */
+$BasicColor11: #fcfcfc; /* snow */
+$BasicColor12: #feefee; /* light error red */
+$BasicColor13: #ed8686; /* light coral */
+
+$MainColor1: #2f95e7; /* main blue */
+$MainColor2: #004eaf; /* darker blue */
+$MainColor3: #96f3e8; /* bright green/blue */
+$MainColor4: #202020; /* dark text*/
+$MainColor5: #2e2e2e; /* lighter text*/
+$MainColor6: #566468; /* dark grey*/
+$MainColor7: #faf1da; /* light yellow grey */
+$MainColor8: #e9eff4; /* light blue grey*/
+
+@import "General";
+@import "Home";
+@import "Projects";
+@import "About";
+@import "Nav";
+
+*,
+body,
+html {
+  font-size: 62.5%;
+}

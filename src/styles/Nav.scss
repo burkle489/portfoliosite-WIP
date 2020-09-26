@@ -1,0 +1,29 @@
+.NavContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 1rem;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 2px solid black;
+    // border-radius: 3px;
+    width: 7rem;
+    height: 3rem;
+    margin: 0 10rem;
+    font-size: 2.4rem;
+  }
+}
+
+.Burger {
+  background-color: transparent;
+  border: 0;
+  height: fit-content;
+  width: fit-content;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: #202020;
+}

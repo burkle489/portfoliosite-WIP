@@ -1,0 +1,117 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $Font1;
+  background-color: $MainColor7;
+}
+
+h1 {
+  color: $MainColor4;
+  padding-bottom: 1.5rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: $MainColor5;
+  padding-bottom: 1rem;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  color: $MainColor5;
+  padding-bottom: 1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+a {
+  color: $MainColor4;
+  text-transform: capitalize;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
+}
+.PageContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.Content {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.HeroContainer {
+  display: flex;
+  width: 100%;
+  background-color: $MainColor2;
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  .Hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 89vh;
+    width: 100%;
+    h1 {
+      font-size: 10rem;
+    }
+    h2 {
+      font-size: 5rem;
+      font-weight: 500;
+    }
+  }
+}
+.MovePageDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border: 0.6rem solid $MainColor5;
+  border-radius: 5rem;
+  width: 6rem;
+  height: 6rem;
+  color: $MainColor5;
+  cursor: pointer;
+  margin: 2rem auto 2rem auto;
+}
+.Attributes {
+  display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-size: 3rem;
+  .Attribute {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    width: 12rem;
+  }
+}
