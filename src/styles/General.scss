@@ -51,6 +51,12 @@ button:focus {
   display: flex;
   flex-direction: column;
   width: 100%;
+  .PageWrapper {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 75%;
+  }
 }
 .Content {
   display: flex;
@@ -99,19 +105,57 @@ button:focus {
   color: $MainColor5;
   cursor: pointer;
   margin: 2rem auto 2rem auto;
+  margin-bottom: 20rem;
 }
 .Attributes {
   display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: space-between;
+  height: fit-content;
   width: 100%;
   font-size: 3rem;
+  margin-bottom: 10rem;
   .Attribute {
     display: flex;
     flex-direction: column;
-    height: 20rem;
-    width: 12rem;
+    height: 18rem;
+    width: 25%;
+    max-width: 30rem;
+    color: $MainColor5;
+    .AttributeHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font-size: 2.5rem;
+        padding-top: 2rem;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+    p {
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+      font-size: 1.6rem;
+    }
+  }
+}
+.Introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50rem;
+  p {
+    font-size: 4rem;
+    width: 55%;
+    margin: 0;
+    text-align: end;
+
+    span {
+      font-size: 4rem;
+      font-style: oblique;
+    }
   }
 }
