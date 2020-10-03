@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Attribute } from "../attribute/Attribute";
+import Nav from "../Nav/Nav";
 
 interface Attribute {
   image: string;
@@ -43,14 +44,19 @@ const attributes: Attribute[] = [
 const Home: React.FC<any> = () => {
   return (
     <div className="PageContent">
-      <div className="HeroContainer">
-        <div className="Wrapper">
-          <section className="Hero">
+      <section className="HeroContainer">
+        <div className="Hero">
+          <div className="LeftHero">
             <h1>Tayler Burke</h1>
             <h2>Front-end Web Developer</h2>
-          </section>
+          </div>
+          <div className="RightHero">
+            <div className="NavContainer">
+              <Nav />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
       <div className="PageWrapper">
         <div className="MovePageDown" onClick={moveToAttributes}>
           <FontAwesomeIcon icon={faChevronDown} size="2x" />
@@ -65,15 +71,18 @@ const Home: React.FC<any> = () => {
           ))}
         </section>
         <section className="Introduction">
-          <p style={{ textAlign: "start" }}>
+          <p style={{ textAlign: "start", alignSelf: "flex-start" }}>
             Since beginning my self-taught journey, I have not looked back. I
             know this is <span>exactly</span> what I want to do for years to
             come.{" "}
           </p>
-          <p>
+          <p style={{ textAlign: "end", alignSelf: "flex-end" }}>
             I love what I do - otherwise I wouldn't be writing this on a
             Saturday evening, would I?
           </p>
+        </section>
+        <section className="Projects">
+
         </section>
       </div>
     </div>

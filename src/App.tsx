@@ -23,7 +23,6 @@ const App = () => {
 
   return (
     <main className="MainContainer">
-      <Nav />
       <div className="Content">
         <Router className="Content">
           <HomePage path="/" />
