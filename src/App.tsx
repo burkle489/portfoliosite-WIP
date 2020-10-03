@@ -1,26 +1,18 @@
-import React from 'react';
-import './App.css';
-import { Router, RouteComponentProps } from '@reach/router';
-import Home from './components/Pages/Home';
-import About from './components/Pages/About';
-import Projects from './components/Pages/Projects';
+import React from "react";
+import "./App.css";
+import { Router, RouteComponentProps } from "@reach/router";
+import Home from "./components/Pages/Home";
+import About from "./components/Pages/About";
+import Projects from "./components/Pages/Projects";
 import "./styles/Main.scss";
-import Nav from './components/Nav/Nav';
+import { Contact } from "./components/Pages/Contact";
 
-
-const HomePage: React.FC<RouteComponentProps> = () => (
-  <Home />
-)
-const AboutPage: React.FC<RouteComponentProps> = () => (
-  <About />
-)
-const ProjectsPage: React.FC<RouteComponentProps> = () => (
-  <Projects />
-)
-
+const HomePage: React.FC<RouteComponentProps> = () => <Home />;
+const AboutPage: React.FC<RouteComponentProps> = () => <About />;
+const ProjectsPage: React.FC<RouteComponentProps> = () => <Projects />;
+const ContactPage: React.FC<RouteComponentProps> = () => <Contact />;
 
 const App = () => {
-
   return (
     <main className="MainContainer">
       <div className="Content">
@@ -28,10 +20,11 @@ const App = () => {
           <HomePage path="/" />
           <AboutPage path="/about" />
           <ProjectsPage path="/projects" />
+          <ContactPage path="/contact" />
         </Router>
       </div>
     </main>
   );
-}
+};
 
 export default App;

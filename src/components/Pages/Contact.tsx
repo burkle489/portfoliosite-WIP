@@ -1,10 +1,10 @@
 import { navigate } from "@reach/router";
 import React from "react";
 
-const Projects = () => {
+const Contact: React.FC<any> = () => {
   return (
     <div className="ComingSoon">
-      <h2>Projects Page Coming Soon</h2>
+      <h2>Contact Page Coming Soon</h2>
       <button
         className="Btn"
         onClick={() => {
@@ -17,4 +17,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export { Contact };

@@ -47,6 +47,27 @@ a {
 button:focus {
   outline: none;
 }
+
+.Btn {
+  background-color: $MainColor1;
+  color: $MainColor5;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.ComingSoon {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3.2rem;
+}
+
 .PageContent {
   display: flex;
   flex-direction: column;
