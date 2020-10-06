@@ -56,6 +56,7 @@ button:focus {
   border-radius: 10px;
   cursor: pointer;
   outline: none;
+  font-family: $Font1;
 }
 
 .ComingSoon {
@@ -115,6 +116,14 @@ button:focus {
     display: flex;
     justify-content: flex-end;
     width: 50%;
+  }
+}
+.NavPointer {
+  height: 100%;
+  width: 5rem;
+  .Pointer {
+    font-size: 5rem;
+    position: absolute;
   }
 }
 
