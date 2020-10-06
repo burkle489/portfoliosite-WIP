@@ -5,11 +5,9 @@ import { useSpring, animated } from "react-spring";
 
 const Home: React.FC<any> = () => {
   const [indicator, setIndicator] = useState<any>(false);
+  const [pointer, setPointer] = useState<boolean>(false);
 
   const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
-  const pointer = useSpring({ opacity: 1, from: { opacity: 0 } });
-
-  // const opacity = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
     <div className="PageContent">
@@ -22,8 +20,6 @@ const Home: React.FC<any> = () => {
           <div className="RightHero">
             <Nav
               pointer={pointer}
-              setIndicator={setIndicator}
-              indicator={indicator}
             />
           </div>
         </div>

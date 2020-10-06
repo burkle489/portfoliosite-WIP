@@ -124,6 +124,8 @@ button:focus {
   .Pointer {
     font-size: 5rem;
     position: absolute;
+    color: $MainColor4;
+    -webkit-text-stroke: 1px;
   }
 }
 
