@@ -101,10 +101,14 @@ button:focus {
   width: 60%;
   h1 {
     font-size: 10rem;
+    overflow: hidden;
+    will-change: transform opacity;
   }
   h2 {
     font-size: 5rem;
     font-weight: 500;
+    overflow: hidden;
+    will-change: transform opacity;
   }
   .LeftHero {
     display: flex;
