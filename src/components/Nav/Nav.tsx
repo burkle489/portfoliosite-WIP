@@ -69,7 +69,8 @@ const Nav: React.FC<NavProps> = ({ pointer }) => {
                 <animated.div style={{ width }}>
                   <Link to={items[index].to}
                     onMouseLeave={() => { setOpacity(false) }}
-                    onMouseEnter={() => {
+                    onMouseEnter={(e) => {
+                      console.log();
                       setOpacity(true)
                       setPosition(items[index].position)
                     }}>

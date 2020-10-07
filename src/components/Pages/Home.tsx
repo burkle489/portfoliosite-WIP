@@ -11,8 +11,19 @@ const Home: React.FC<any> = () => {
   const [indicator, setIndicator] = useState<any>(false);
   const [pointer, setPointer] = useState<boolean>(false);
 
-  const h1 = useSpring({ opacity: 1, height: 210, from: { opacity: 0, height: 0 }, config: { h1Config } });
-  const h2 = useSpring({ opacity: 1, height: 120, from: { opacity: 0, height: 0 }, config: { h2Config }, delay: 1000 });
+  const h1 = useSpring({
+    opacity: 1,
+    height: "fit-content",
+    from: { opacity: 0, height: 0 },
+    config: { h1Config },
+  });
+  const h2 = useSpring({
+    opacity: 1,
+    height: 120,
+    from: { opacity: 0, height: 0 },
+    config: { h2Config },
+    delay: 1000,
+  });
 
   return (
     <div className="PageContent">
@@ -23,9 +34,7 @@ const Home: React.FC<any> = () => {
             <animated.h2 style={h2}>Front-end Web Developer</animated.h2>
           </div>
           <div className="RightHero">
-            <Nav
-              pointer={pointer}
-            />
+            <Nav pointer={pointer} />
           </div>
         </div>
       </section>
