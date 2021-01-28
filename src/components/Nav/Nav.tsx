@@ -18,29 +18,41 @@ const Nav: React.FC<NavProps> = ({ pointer }) => {
 
   const movePointer = useSpring({
     transform: position.projects
-      ? "translate3d(0,260px,0)"
+      ? "translate3d(0,0px,0)"
       : position.about
-        ? "translate3d(0,345px,0)"
+        ? "translate3d(0,85px,0)"
         : position.contact
-          ? "translate3d(0,435px,0)"
-          : `translate3d(0,260px,0)`,
-    opacity: opacity ? 1 : 0
+          ? "translate3d(0,175px,0)"
+          : `translate3d(0,0px,0)`,
+    opacity: opacity ? 1 : 0,
+    config: { mass: 5, friction: 100, tension: 1500 }
+  });
+  const movePointerLight = useSpring({
+    transform: position.projects
+      ? "translate3d(0,0px,0)"
+      : position.about
+        ? "translate3d(0,85px,0)"
+        : position.contact
+          ? "translate3d(0,175px,0)"
+          : `translate3d(0,0px,0)`,
+    opacity: opacity ? 1 : 0,
+    config: { mass: 5, friction: 100, tension: 2000 }
   });
 
   const items = [
     {
       position: { projects: true, about: false, contact: false },
-      to: "/projects",
+      to: "projects",
       label: "Projects",
     },
     {
       position: { projects: false, about: true, contact: false },
-      to: "/about",
+      to: "about",
       label: "About",
     },
     {
       position: { projects: false, about: false, contact: true },
-      to: "/contact",
+      to: "contact",
       label: "Contact",
     },
   ]
@@ -49,25 +61,31 @@ const Nav: React.FC<NavProps> = ({ pointer }) => {
   const trail = useTrail(items.length, {
     config,
     opacity: 1,
-    x: 0,
     width: 200,
     delay: 2000,
-    from: { opacity: 0, x: 20, width: 0 },
+    from: { opacity: 0, width: 200 },
   })
   return (
     <>
-      <div className="NavPointer">
-        <animated.span style={movePointer} className="Pointer">
-          >
-        </animated.span>
-      </div>
       <div className="NavContainer">
         <nav className="Navigation">
+          <div className="NavPointerContainer">
+            <div className="NavPointer">
+              <animated.span style={movePointerLight} className="Pointer">
+                >
+            </animated.span>
+            </div>
+            <div className="NavPointer Bold">
+              <animated.span style={movePointer} className="Pointer">
+                >
+            </animated.span>
+            </div>
+          </div>
           {
-            trail.map(({ width, x, ...rest }, index) => (
-              <animated.div style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
+            trail.map(({ width, ...rest }, index) => (
+              <animated.div style={{ ...rest }}>
                 <animated.div style={{ width }}>
-                  <Link to={items[index].to}
+                  <Link className="Link" to={items[index].to}
                     onMouseLeave={() => { setOpacity(false) }}
                     onMouseEnter={(e) => {
                       console.log();
