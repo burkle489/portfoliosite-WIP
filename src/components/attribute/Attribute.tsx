@@ -28,11 +28,13 @@ const Attribute: React.FC<AttributeProps> = ({ image, skill, description }) => {
   };
   return (
     <div className="Attribute">
-      <div className="AttributeHeader">
-        <div>{icon()}</div>
-        <h3>{skill}</h3>
+      <div className="AttributeInner">
+        <div className="AttributeHeader">
+          <div>{icon()}</div>
+          <h3>{skill}</h3>
+        </div>
+        <p>{description}</p>
       </div>
-      <p>{description}</p>
     </div>
   );
 };

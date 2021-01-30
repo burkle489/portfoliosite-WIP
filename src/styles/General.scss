@@ -74,7 +74,7 @@ button:focus {
 .PageContent {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   .PageWrapper {
     display: flex;
     align-self: center;
@@ -92,7 +92,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   background-color: $MainColor2;
   height: 100vh;
 }
@@ -101,6 +101,9 @@ button:focus {
   display: flex;
   height: 80%;
   width: 100%;
+  @include bppx("768px") {
+    flex-direction: column;
+  }
   h1 {
     font-size: 10rem;
     overflow: hidden;
@@ -119,6 +122,10 @@ button:focus {
     min-width: fit-content;
     width: 50%;
     margin-right: 5rem;
+    @include bppx("768px") {
+      width: 100%;
+      align-items: center;
+    }
     h1 {
       white-space: nowrap;
     }
@@ -130,6 +137,10 @@ button:focus {
     display: flex;
     justify-content: flex-end;
     width: 50%;
+    @include bppx("768px") {
+      width: 100%;
+      align-items: center;
+    }
   }
 }
 .NavPointerContainer {
@@ -173,30 +184,47 @@ button:focus {
   width: 100%;
   font-size: 3rem;
   margin-bottom: 10rem;
+  flex-wrap: wrap;
   .Attribute {
     display: flex;
     flex-direction: column;
-    height: 18rem;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 20rem;
     width: 25%;
-    max-width: 30rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
     color: $MainColor5;
-    .AttributeHeader {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      h3 {
-        font-size: 2.5rem;
-        padding-top: 2rem;
-        font-weight: 700;
-        text-align: center;
-      }
+    @include bppx("1500px") {
+      width: 50%;
     }
-    p {
-      font-weight: 600;
-      text-align: center;
-      margin: 0;
-      font-size: 1.6rem;
+    @include bppx("768px") {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+    .AttributeInner {
+      max-width: 30rem;
+
+      .AttributeHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3 {
+          font-size: 2.5rem;
+          padding-top: 2rem;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+      p {
+        font-weight: 600;
+        text-align: center;
+        margin: 0;
+        font-size: 1.6rem;
+      }
     }
   }
 }

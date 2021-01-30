@@ -35,10 +35,10 @@ const attributes: Attribute[] = [
 ];
 
 const About = () => {
-  const comingSoon = true;
+  const comingSoon = false;
 
   return (
-    <>
+    <div className="PageContent">
       {comingSoon ? (
         <div className="ComingSoon">
           <h2>About Page Coming Soon</h2>
@@ -52,30 +52,30 @@ const About = () => {
           </button>
         </div>
       ) : (
-        <div className="PageWrapper">
-          <section className="Attributes">
-            {attributes.map((a) => (
-              <Attribute
-                image={a.image}
-                skill={a.skill}
-                description={a.description}
-              />
-            ))}
-          </section>
-          <section className="Introduction">
-            <p style={{ textAlign: "start", alignSelf: "flex-start" }}>
-              Since beginning my self-taught journey, I have not looked back. I
+          <div className="PageWrapper WidthContent">
+            <section className="Attributes">
+              {attributes.map((a) => (
+                <Attribute
+                  image={a.image}
+                  skill={a.skill}
+                  description={a.description}
+                />
+              ))}
+            </section>
+            <section className="Introduction">
+              <p style={{ textAlign: "start", alignSelf: "flex-start" }}>
+                Since beginning my self-taught journey, I have not looked back. I
               know this is <span>exactly</span> what I want to do for years to
               come.{" "}
+              </p>
+              <p style={{ textAlign: "end", alignSelf: "flex-end" }}>
+                I love what I do - otherwise I wouldn't be writing this on a
+                Saturday evening, would I?
             </p>
-            <p style={{ textAlign: "end", alignSelf: "flex-end" }}>
-              I love what I do - otherwise I wouldn't be writing this on a
-              Saturday evening, would I?
-            </p>
-          </section>
-        </div>
-      )}
-    </>
+            </section>
+          </div>
+        )}
+    </div>
   );
 };
 

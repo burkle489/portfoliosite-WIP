@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { SetStateAction, useContext, useState } from "react";
 import "./App.css";
 import { Router, RouteComponentProps, useLocation } from "@reach/router";
 import Home from "./components/Pages/Home";
@@ -10,12 +10,18 @@ import { TopNav } from "./components/Nav/TopNav";
 import { store } from "./store";
 import { animated, useTransition } from "react-spring";
 
-const HomePage: React.FC<RouteComponentProps> = () => <Home />;
+interface HomeProps extends RouteComponentProps {
+  setInitialVisit: React.Dispatch<SetStateAction<boolean>>;
+  initialVisit: boolean;
+}
+
+const HomePage: React.FC<HomeProps> = ({ setInitialVisit, initialVisit }) => <Home initialVisit={initialVisit} setInitialVisit={setInitialVisit} />;
 const AboutPage: React.FC<RouteComponentProps> = () => <About />;
 const ProjectsPage: React.FC<RouteComponentProps> = () => <Projects />;
 const ContactPage: React.FC<RouteComponentProps> = () => <Contact />;
 
 const App = () => {
+  const [initialVisit, setInitialVisit] = useState<boolean>(true)
   const globalState = useContext(store);
   const { dispatch, state } = globalState;
   console.log({ dispatch, state })
@@ -28,14 +34,14 @@ const App = () => {
 
   return (
     <>
-      <TopNav />
       <main className="MainContainer">
         <div className="Content">
           {
             transitions.map(({ item, props, key }) =>
               <animated.div key={key} style={props}>
+                <TopNav />
                 <Router location={item}>
-                  <HomePage path="/" />
+                  <HomePage path="/" setInitialVisit={setInitialVisit} initialVisit={initialVisit} />
                   <AboutPage path="/about" />
                   <ProjectsPage path="/projects" />
                   <ContactPage path="/contact" />

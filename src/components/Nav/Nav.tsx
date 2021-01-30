@@ -5,10 +5,10 @@ import { useSpring, animated, useSprings, useTrail } from "react-spring";
 
 type NavProps = {
   pointer: any;
-
+  initialVisit: any;
 };
 
-const Nav: React.FC<NavProps> = ({ pointer }) => {
+const Nav: React.FC<NavProps> = ({ pointer, initialVisit }) => {
   const [opacity, setOpacity] = useState<boolean>(false);
   const [position, setPosition] = useState<any>({
     projects: true,
@@ -63,7 +63,7 @@ const Nav: React.FC<NavProps> = ({ pointer }) => {
     opacity: 1,
     width: 200,
     delay: 2000,
-    from: { opacity: 0, width: 200 },
+    from: initialVisit ? { opacity: 0, width: 200 } : { opacity: 1, width: 200 },
   })
   return (
     <>

@@ -4,23 +4,27 @@ import Nav from "../Nav/Nav";
 import { useSpring, animated, useTrail } from "react-spring";
 import { store } from "../../store";
 
-const Home: React.FC<any> = () => {
+const Home: React.FC<any> = ({ initialVisit, setInitialVisit }) => {
   const globalState = useContext(store);
   const { dispatch, state } = globalState;
   const [indicator, setIndicator] = useState<any>(false);
   const [pointer, setPointer] = useState<boolean>(false);
 
+  React.useEffect(() => {
+    setInitialVisit(false);
+  }, [])
+
   const h1 = useSpring({
     opacity: 1,
     height: 220,
-    from: { opacity: 0, height: 0 },
+    from: initialVisit ? { opacity: 0, height: 0 } : { opacity: 1, height: 220 },
     config: { mass: 10, tension: 2000, friction: 500 }
   });
 
   const h2 = useSpring({
     opacity: 1,
     height: 120,
-    from: { opacity: 0, height: 0 },
+    from: initialVisit ? { opacity: 0, height: 0 } : { opacity: 1, height: 120 },
     config: { mass: 10, tension: 2000, friction: 1000 },
     delay: 1000,
   });
@@ -34,7 +38,7 @@ const Home: React.FC<any> = () => {
             <animated.h2 style={h2}>Front-end <br />Web Developer</animated.h2>
           </div>
           <div className="RightHero">
-            <Nav pointer={pointer} />
+            <Nav pointer={pointer} initialVisit={initialVisit} />
           </div>
         </div>
       </section>

@@ -22,17 +22,46 @@ $MainColor5: #2e2e2e; /* lighter text*/
 $MainColor6: #566468; /* dark grey*/
 $MainColor7: #faf1da; /* light yellow grey */
 $MainColor8: #e9eff4; /* light blue grey*/
+/* Breakpoints */
 
+$breakpoints: (
+  "small-mobile": 360px,
+  "mobile": 480px,
+  "tablet": 768px,
+  "laptop": 1024px,
+  "desktop": 1200px,
+) !default;
+
+@mixin bp($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media only screen and (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin bppx($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-@import "General";
-@import "Home";
-@import "Projects";
-@import "About";
-@import "Nav";
+@import "./styles/General.scss";
+@import "./styles/Home.scss";
+@import "./styles/Projects.scss";
+@import "./styles/About.scss";
+@import "./styles/Nav.scss";
 
 *,
 body,
 html {
   font-size: 62.5%;
+  // overflow: visible;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
