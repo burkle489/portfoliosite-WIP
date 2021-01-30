@@ -47,11 +47,11 @@ $breakpoints: (
 }
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-@import "./styles/General.scss";
-@import "./styles/Home.scss";
-@import "./styles/Projects.scss";
-@import "./styles/About.scss";
-@import "./styles/Nav.scss";
+@import "General.scss";
+@import "Home.scss";
+@import "Projects.scss";
+@import "About.scss";
+@import "Nav.scss";
 
 *,
 body,

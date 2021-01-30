@@ -40,7 +40,7 @@ const App = () => {
             transitions.map(({ item, props, key }) =>
               <animated.div key={key} style={props}>
                 <TopNav />
-                <Router location={item}>
+                <Router location={item} className="Router">
                   <HomePage path="/" setInitialVisit={setInitialVisit} initialVisit={initialVisit} />
                   <AboutPage path="/about" />
                   <ProjectsPage path="/projects" />

@@ -52,7 +52,7 @@ const About = () => {
           </button>
         </div>
       ) : (
-          <div className="PageWrapper WidthContent">
+          <div className="PageWrapper WidthContent HeightContent">
             <section className="Attributes">
               {attributes.map((a) => (
                 <Attribute
